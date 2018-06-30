@@ -24,4 +24,13 @@
     "jest": "^23.2.0",
     "typescript": "^2.9.2"
   },
+  "jest": {
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "\\.(test|spec)\\.ts$",
+    "moduleFileExtensions": [
+      "ts"
+    ]
+  }
 }
