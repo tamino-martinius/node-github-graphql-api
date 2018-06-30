@@ -1,6 +1,6 @@
 {
   "name": "github-graphql-api",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "A node wrapper GitHub GraphQL API with minimal dependencies.",
   "author": "Tamino Martinius <dev@zaku.eu>",
   "main": "./dist/index.js",
