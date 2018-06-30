@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tamino-martinius/node-jira-api-v2.git"
+    "url": "https://github.com/tamino-martinius/node-github-graphql-api.git"
   },
   "engines": {
     "node": ">=6.14.0"
