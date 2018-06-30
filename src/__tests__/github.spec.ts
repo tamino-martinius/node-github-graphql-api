@@ -8,7 +8,8 @@ import { dedent } from 'ts-dedent';
 
 jest.mock('https');
 let responseStatus: number = 902;
-let responseBody: Dict<any> = {};
+let responseString: string | undefined = undefined;
+let responseJson: Dict<any> = {};
 let requestString: string = '';
 let curlString: string = '';
 
@@ -41,7 +42,11 @@ const requestMock = function (options, cb) {
       // console.log(curlString);
 
       if (callbacks.data) {
-        callbacks.data(JSON.stringify(responseBody));
+        if (responseString) {
+          callbacks.data(responseString);
+        } else {
+          callbacks.data(JSON.stringify(responseJson));
+        }
         callbacks.end();
       }
     },
@@ -53,7 +58,8 @@ https.request.mockImplementation(requestMock);
 
 beforeEach(() => {
   responseStatus = 902;
-  responseBody = {};
+  responseString = undefined;
+  responseJson = {};
   requestString = '';
   curlString = '';
 });
