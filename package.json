@@ -21,8 +21,10 @@
   "scripts": {
     "coverage": "rm -rf coverage* && jest --coverage",
     "test": "jest",
+    "watch": "tsc -w",
     "ci": "npm run coverage && codecov",
     "compile": "rm -rf dist/* && tsc",
+    "preversion": "npm run compile && git add ."
   },
   "devDependencies": {
     "@types/jest": "^23.1.3",
