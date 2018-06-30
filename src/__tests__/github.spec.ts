@@ -36,6 +36,8 @@ const requestMock = function (options, cb) {
   };
   this.on = (event, cb) => {};
   this.end = () => {
+    // console.log(curlString);
+
     if (callbacks.data) {
       callbacks.data(JSON.stringify(responseBody));
       callbacks.end();
@@ -62,7 +64,7 @@ describe('GitHub', () => {
   const gitHubFactory = () => new GitHub({ token, debug, apiUrl });
 
   describe('#query', () => {
-    let query: string = '{}';
+    let query: string = '';
     let variables: Dict<any> | undefined = undefined;
 
     const subject = () => {
@@ -70,22 +72,36 @@ describe('GitHub', () => {
     };
 
     it('makes call to GitHub API', async () => {
-      await subject();
+      try {
+        await subject();
+      } catch (error) {
+        // Just check if the request was made
+      }
       expect(requestString).toEqual(dedent`
+        POST https://api.github.com/graphql
+        {"query":""}
       `);
     });
 
-    context('...', {
+    context('when query is empty', {
       definitions() {
-        query = '{}';
+        query = '';
         variables = undefined;
         responseStatus = 200;
-        responseBody = { };
+        responseBody = {
+          data: null,
+          errors: [{
+            message: 'A query attribute must be specified and must be a string.',
+          }],
+        };
       },
       tests() {
-        it('...', async () => {
-          const res = await subject();
-          expect(res).toEqual(responseBody);
+        it('throws errors', async () => {
+          try {
+            const res = await subject();
+          } catch (error) {
+            expect(error).toEqual(responseBody.errors);
+          }
         });
       },
     });
