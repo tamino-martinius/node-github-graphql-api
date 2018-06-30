@@ -11,6 +11,7 @@ let responseStatus: number = 902;
 let responseString: string | undefined = undefined;
 let responseJson: Dict<any> = {};
 let requestString: string = '';
+let requestError: any = undefined;
 let curlString: string = '';
 
 const requestMock = function (options, cb) {
@@ -37,6 +38,9 @@ const requestMock = function (options, cb) {
       curlString += ` --data '${str}'`;
     },
     on(event, cb) {
+      if (event === 'error' && requestError) {
+        cb(requestError);
+      }
     },
     end() {
       // console.log(curlString);
@@ -61,6 +65,7 @@ beforeEach(() => {
   responseString = undefined;
   responseJson = {};
   requestString = '';
+  requestError = undefined;
   curlString = '';
 });
 
