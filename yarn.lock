@@ -3279,6 +3279,10 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
+ts-dedent@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-1.0.0.tgz#685c0069d013d4c35e683463e7692eea2ffa18da"
+
 ts-jest@^22.4.6:
   version "22.4.6"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-22.4.6.tgz#a5d7f5e8b809626d1f4143209d301287472ec344"
