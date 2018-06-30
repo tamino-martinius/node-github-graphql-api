@@ -91,6 +91,27 @@ describe('GitHub', () => {
       `);
     });
 
+    context('when variables are present', {
+      definitions() {
+        variables = {
+          foo: 'bar',
+        };
+      },
+      tests() {
+        it('makes call with variables to GitHub API', async () => {
+          try {
+            await subject();
+          } catch (error) {
+            // Just check if the request was made
+          }
+          expect(requestString).toEqual(dedent`
+            POST https://api.github.com/graphql
+            {"query":"","variables":{"foo":"bar"}}
+          `);
+        });
+      },
+    });
+
     context('when query is empty', {
       definitions() {
         query = '';
