@@ -66,8 +66,13 @@ beforeEach(() => {
 
 describe('GitHub', () => {
   const token: string = 'token123';
-  const debug: boolean | undefined = false;
-  const apiUrl: string | undefined = undefined;
+  let debug: boolean | undefined = false;
+  let apiUrl: string | undefined = undefined;
+
+  beforeEach(() => {
+    debug = false;
+    apiUrl = undefined;
+  });
 
   const gitHubFactory = () => new GitHub({ token, debug, apiUrl });
 
