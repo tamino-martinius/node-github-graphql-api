@@ -53,3 +53,40 @@ beforeEach(() => {
   curlString = '';
 });
 
+describe('GitHub', () => {
+  const token: string = 'token123';
+  const debug: boolean | undefined = false;
+  const apiUrl: string | undefined = undefined;
+
+  const gitHubFactory = () => new GitHub({ token, debug, apiUrl });
+
+  describe('#query', () => {
+    let query: string = '{}';
+    let variables: Dict<any> | undefined = undefined;
+
+    const subject = () => {
+      return gitHubFactory().query(query, variables);
+    };
+
+    it('makes call to GitHub API', async () => {
+      await subject();
+      expect(requestString).toEqual(dedent`
+      `);
+    });
+
+    context('...', {
+      definitions() {
+        query = '{}';
+        variables = undefined;
+        responseStatus = 200;
+        responseBody = { };
+      },
+      tests() {
+        it('...', async () => {
+          const res = await subject();
+          expect(res).toEqual(responseBody);
+        });
+      },
+    });
+  });
+});
