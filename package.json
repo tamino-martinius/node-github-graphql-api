@@ -45,6 +45,10 @@
     "moduleFileExtensions": [
       "ts",
       "js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/__tests__/*"
     ]
   }
 }
