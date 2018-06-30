@@ -255,5 +255,20 @@ describe('GitHub', () => {
         });
       },
     });
+
+    context('when request fails', {
+      definitions() {
+        requestError = 'foo';
+      },
+      tests() {
+        it('throws errors', async () => {
+          try {
+            const res = await subject();
+          } catch (error) {
+            expect(error).toEqual(requestError);
+          }
+        });
+      },
+    });
   });
 });
