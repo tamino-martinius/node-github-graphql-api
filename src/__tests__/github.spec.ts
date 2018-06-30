@@ -212,7 +212,7 @@ describe('GitHub', () => {
       tests() {
         it('throws errors', async () => {
           try {
-            const res = await subject();
+            subject();
           } catch (error) {
             expect(error).toEqual(responseJson.errors);
           }
@@ -230,7 +230,7 @@ describe('GitHub', () => {
       tests() {
         it('throws errors', async () => {
           try {
-            const res = await subject();
+            await subject();
           } catch (error) {
             expect(error).toEqual('GitHub GraphQL API response is not able to be parsed as JSON');
           }
@@ -248,7 +248,7 @@ describe('GitHub', () => {
       tests() {
         it('throws errors', async () => {
           try {
-            const res = await subject();
+            await subject();
           } catch (error) {
             expect(error).toEqual('Unknown GraphQL error');
           }
@@ -263,7 +263,7 @@ describe('GitHub', () => {
       tests() {
         it('throws errors', async () => {
           try {
-            const res = await subject();
+            await subject();
           } catch (error) {
             expect(error).toEqual(requestError);
           }
