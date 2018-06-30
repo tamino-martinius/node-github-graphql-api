@@ -179,5 +179,23 @@ describe('GitHub', () => {
         });
       },
     });
+
+    context('when response does not contain data attribute', {
+      definitions() {
+        query = '';
+        variables = undefined;
+        responseStatus = 200;
+        responseJson = {};
+      },
+      tests() {
+        it('throws errors', async () => {
+          try {
+            const res = await subject();
+          } catch (error) {
+            expect(error).toEqual('Unknown GraphQL error');
+          }
+        });
+      },
+    });
   });
 });
