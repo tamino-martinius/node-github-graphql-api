@@ -144,7 +144,7 @@ describe('GitHub', () => {
         query = '';
         variables = undefined;
         responseStatus = 200;
-        responseBody = {
+        responseJson = {
           data: null,
           errors: [{
             message: 'A query attribute must be specified and must be a string.',
@@ -156,7 +156,7 @@ describe('GitHub', () => {
           try {
             const res = await subject();
           } catch (error) {
-            expect(error).toEqual(responseBody.errors);
+            expect(error).toEqual(responseJson.errors);
           }
         });
       },
