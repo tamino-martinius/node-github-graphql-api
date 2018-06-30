@@ -161,5 +161,23 @@ describe('GitHub', () => {
         });
       },
     });
+
+    context('when response is malformed', {
+      definitions() {
+        query = '';
+        variables = undefined;
+        responseStatus = 200;
+        responseString = 'foo';
+      },
+      tests() {
+        it('throws errors', async () => {
+          try {
+            const res = await subject();
+          } catch (error) {
+            expect(error).toEqual('GitHub GraphQL API response is not able to be parsed as JSON');
+          }
+        });
+      },
+    });
   });
 });
