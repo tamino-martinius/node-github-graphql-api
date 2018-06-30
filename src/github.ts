@@ -68,7 +68,7 @@ export class GitHub {
               return reject('Unknown GraphQL error');
             }
 
-            return resolve(json);
+            return resolve(json.data);
           });
         },
       );
