@@ -76,6 +76,54 @@ describe('GitHub', () => {
 
   const gitHubFactory = () => new GitHub({ token, debug, apiUrl });
 
+  describe('.new', () => {
+    const subject = () => {
+      return gitHubFactory();
+    };
+
+    it('uses default values', () => {
+      const github = subject();
+      expect(github.token).toEqual(token);
+      expect(github.debug).toEqual(false);
+      expect(github.apiUrl).toEqual('https://api.github.com/graphql');
+    });
+
+    context('when debug is set', {
+      definitions() {
+        debug = true;
+      },
+      tests() {
+        it('returns passed value', () => {
+          const github = subject();
+          expect(github.debug).toEqual(debug);
+        });
+      },
+    });
+
+    context('when apiUrl is set', {
+      definitions() {
+        apiUrl = 'https://example.com';
+      },
+      tests() {
+        it('returns passed value', () => {
+          const github = subject();
+          expect(github.apiUrl).toEqual(apiUrl);
+        });
+      },
+    });
+
+    context('when apiUrl is invalid', {
+      definitions() {
+        apiUrl = 'foo';
+      },
+      tests() {
+        it('throws error', () => {
+          expect(subject).toThrow();
+        });
+      },
+    });
+  });
+
   describe('#query', () => {
     let query: string = '';
     let variables: Dict<any> | undefined = undefined;
