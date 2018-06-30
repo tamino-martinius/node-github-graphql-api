@@ -13,5 +13,5 @@ script:
   - if [ "${COVERAGE}" = "true" ]; then npm run ci; else npm run test; fi
 matrix:
   include:
-    - python: '3.5' # this is not strictly necessary
+    - node_js: 'node'
       env: COVERAGE=true
