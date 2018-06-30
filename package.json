@@ -43,7 +43,8 @@
     },
     "testRegex": "\\.(test|spec)\\.ts$",
     "moduleFileExtensions": [
-      "ts"
+      "ts",
+      "js"
     ]
   }
 }
