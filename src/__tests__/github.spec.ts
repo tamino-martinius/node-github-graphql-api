@@ -34,6 +34,7 @@ const requestMock = function (options, cb) {
     requestString += `\n${str}`;
     curlString += ` --data '${str}'`;
   };
+  this.on = (event, cb) => {};
   this.end = () => {
     if (callbacks.data) {
       callbacks.data(JSON.stringify(responseBody));
