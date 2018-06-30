@@ -29,9 +29,10 @@ export class GitHub {
     return new Promise((resolve, reject) => {
       const req = request(
         {
-          hostname: 'api.github.com',
-          path: '/graphql',
+          hostname: this.url.hostname,
+          path: this.url.pathname,
           method: 'POST',
+          protocol: this.url.protocol,
           headers: {
             'Content-Type': 'application/json',
             'Content-Length': payloadString.length,
