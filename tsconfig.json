@@ -30,4 +30,11 @@
     "*/__tests__",
     "*/__mocks__"
   ],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.jest.json"
+      }
+    }
+  }
 }
