@@ -112,6 +112,33 @@ describe('GitHub', () => {
       },
     });
 
+    context('when query valid', {
+      definitions() {
+        query = `
+          query {
+            user(login: "tamino-martinius") {
+              name
+            }
+          }
+        `;
+        variables = undefined;
+        responseStatus = 200;
+        responseJson = {
+          data: {
+            user: {
+              name: 'Tamino Martinius',
+            },
+          },
+        };
+      },
+      tests() {
+        it('returns data', async () => {
+          const data = await subject();
+          expect(data).toEqual(responseJson.data);
+        });
+      },
+    });
+
     context('when query is empty', {
       definitions() {
         query = '';
