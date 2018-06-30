@@ -1,2 +1,2 @@
 ignore:
-  - "__tests__/.*" # ignore tests itself
+  - "__tests__" # ignore tests itself
