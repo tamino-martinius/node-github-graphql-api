@@ -19,6 +19,7 @@
     "node": ">=6.14.0"
   },
   "scripts": {
+    "test": "jest",
     "compile": "rm -rf dist/* && tsc",
   },
   "devDependencies": {
