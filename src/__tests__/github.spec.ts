@@ -79,7 +79,7 @@ describe('GitHub', () => {
       return gitHubFactory().query(query, variables);
     };
 
-    it('makes call to GitHub API', async () => {
+    it('makes call with query to GitHub API', async () => {
       try {
         await subject();
       } catch (error) {
