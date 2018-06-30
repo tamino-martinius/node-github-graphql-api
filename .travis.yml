@@ -10,4 +10,8 @@ node_js:
   - '10'
   - 'node'
 script:
-  - npm run ci
+  - if [ "${COVERAGE}" = "true" ]; then npm run ci; else npm run test; fi
+matrix:
+  include:
+    - python: '3.5' # this is not strictly necessary
+      env: COVERAGE=true
