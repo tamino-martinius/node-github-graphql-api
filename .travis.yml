@@ -8,10 +8,9 @@ node_js:
   - '8.10' # AWS Lambda
   - '9'
   - '10'
-  - 'node'
 script:
   - if [ "${COVERAGE}" = "true" ]; then npm run ci; else npm run test; fi
 matrix:
-  include:
+  include: # Add run with latest version and code coverage
     - node_js: 'node'
       env: COVERAGE=true
