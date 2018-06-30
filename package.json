@@ -19,7 +19,9 @@
     "node": ">=6.14.0"
   },
   "scripts": {
+    "coverage": "rm -rf coverage* && jest --coverage",
     "test": "jest",
+    "ci": "npm run coverage && codecov",
     "compile": "rm -rf dist/* && tsc",
   },
   "devDependencies": {
