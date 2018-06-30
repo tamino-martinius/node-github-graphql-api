@@ -30,20 +30,22 @@ const requestMock = function (options, cb) {
     },
     statusCode: responseStatus,
   });
-  this.write = (str) => {
-    requestString += `\n${str}`;
-    curlString += ` --data '${str}'`;
-  };
-  this.on = (event, cb) => {};
-  this.end = () => {
-    // console.log(curlString);
+  return {
+    write(str) {
+      requestString += `\n${str}`;
+      curlString += ` --data '${str}'`;
+    },
+    on(event, cb) {
+    },
+    end() {
+      // console.log(curlString);
 
-    if (callbacks.data) {
-      callbacks.data(JSON.stringify(responseBody));
-      callbacks.end();
-    }
+      if (callbacks.data) {
+        callbacks.data(JSON.stringify(responseBody));
+        callbacks.end();
+      }
+    },
   };
-  return this;
 };
 
 /// @ts-ignore
