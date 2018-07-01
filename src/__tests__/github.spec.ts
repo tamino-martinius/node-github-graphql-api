@@ -5,6 +5,9 @@ import {
 } from '../';
 import https from 'https';
 import { dedent } from 'ts-dedent';
+import {
+  parse as parseUrl,
+} from 'url';
 
 jest.mock('https');
 let responseStatus: number = 902;
@@ -107,8 +110,10 @@ describe('GitHub', () => {
         apiUrl = 'foo';
       },
       tests() {
-        it('throws error', () => {
-          expect(subject).toThrow();
+        it('tries to parse', () => {
+          const github = subject();
+          expect(github.apiUrl).toEqual(apiUrl);
+          expect(github.url).toEqual(parseUrl(apiUrl));
         });
       },
     });
