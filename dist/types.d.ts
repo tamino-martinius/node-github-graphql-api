@@ -3,5 +3,5 @@ export interface Dict<T> {
 }
 export interface Options {
     token: string;
-    apiUrl: string | undefined;
+    apiUrl?: string;
 }
