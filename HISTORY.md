@@ -4,6 +4,7 @@
 
 ## v1.0.0
 
-First release includes following functions
+First release includes following functions:
 
-* `#method(arg1)`
+* `.constructor(options: Options)`
+* `#query(query: string, variables: Dict<any>): Promise<any>`
