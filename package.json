@@ -1,7 +1,18 @@
 {
   "name": "github-graphql-api",
   "version": "1.0.0",
-  "description": "A node wrapper GitHub GraphQL API with minimal dependencies.",
+  "description": "A node client for the GitHub GraphQL API with minimal dependencies created with TypeScript.",
+  "keywords": [
+    "github",
+    "github-api",
+    "graphql",
+    "api",
+    "api-client",
+    "typescript",
+    "jest",
+    "node",
+    "nodejs"
+  ],
   "author": "Tamino Martinius <dev@zaku.eu>",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
