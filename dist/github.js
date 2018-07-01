@@ -39,11 +39,8 @@ var https_1 = require("https");
 var url_1 = require("url");
 var GitHub = (function () {
     function GitHub(config) {
-        this.debug = false;
         this.apiUrl = 'https://api.github.com/graphql';
         this.token = config.token;
-        if (config.debug)
-            this.debug = config.debug;
         if (config.apiUrl)
             this.apiUrl = config.apiUrl;
         this.url = new url_1.URL(this.apiUrl);
@@ -93,7 +90,7 @@ var GitHub = (function () {
                                     }
                                     return reject('Unknown GraphQL error');
                                 }
-                                return resolve(json);
+                                return resolve(json.data);
                             });
                         });
                         req.on('error', function (err) { reject(err); });

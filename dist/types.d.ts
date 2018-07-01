@@ -1,8 +1,7 @@
 export interface Dict<T> {
     [key: string]: T;
 }
-export interface Config {
+export interface Options {
     token: string;
-    debug: boolean | undefined;
     apiUrl: string | undefined;
 }
