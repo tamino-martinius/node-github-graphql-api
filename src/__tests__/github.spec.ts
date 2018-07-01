@@ -79,7 +79,7 @@ describe('GitHub', () => {
 
   const gitHubFactory = () => new GitHub({ token, apiUrl });
 
-  describe('.new', () => {
+  describe('.constructor', () => {
     const subject = () => {
       return gitHubFactory();
     };
