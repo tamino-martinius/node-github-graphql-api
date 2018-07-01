@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tamino-martinius/node-github-graphql-api.svg?branch=master)](https://travis-ci.org/tamino-martinius/node-github-graphql-api)
 [![codecov](https://codecov.io/gh/tamino-martinius/node-github-graphql-api/branch/master/graph/badge.svg)](https://codecov.io/gh/tamino-martinius/node-github-graphql-api)
 
-A node wrapper GitHub GraphQL API with minimal dependencies and TypeScript support.
+A node client for the GitHub GraphQL API with minimal dependencies created with TypeScript.
 
 ## Table of contents
 
