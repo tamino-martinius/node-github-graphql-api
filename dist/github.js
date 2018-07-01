@@ -43,7 +43,7 @@ var GitHub = (function () {
         this.token = config.token;
         if (config.apiUrl)
             this.apiUrl = config.apiUrl;
-        this.url = new url_1.URL(this.apiUrl);
+        this.url = url_1.parse(this.apiUrl);
     }
     GitHub.prototype.query = function (query, variables) {
         return __awaiter(this, void 0, void 0, function () {

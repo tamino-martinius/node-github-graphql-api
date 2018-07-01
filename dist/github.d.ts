@@ -1,10 +1,10 @@
 /// <reference types="node" />
 import { Dict, Options } from './types';
-import { URL } from 'url';
+import { UrlWithStringQuery } from 'url';
 export declare class GitHub {
     token: string;
     apiUrl: string;
-    url: URL;
+    url: UrlWithStringQuery;
     constructor(config: Options);
     query(query: string, variables?: Dict<any>): Promise<any>;
 }
