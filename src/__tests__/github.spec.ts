@@ -71,15 +71,13 @@ beforeEach(() => {
 
 describe('GitHub', () => {
   const token: string = 'token123';
-  let debug: boolean | undefined = false;
   let apiUrl: string | undefined = undefined;
 
   beforeEach(() => {
-    debug = false;
     apiUrl = undefined;
   });
 
-  const gitHubFactory = () => new GitHub({ token, debug, apiUrl });
+  const gitHubFactory = () => new GitHub({ token, apiUrl });
 
   describe('.new', () => {
     const subject = () => {
@@ -89,20 +87,7 @@ describe('GitHub', () => {
     it('uses default values', () => {
       const github = subject();
       expect(github.token).toEqual(token);
-      expect(github.debug).toEqual(false);
       expect(github.apiUrl).toEqual('https://api.github.com/graphql');
-    });
-
-    context('when debug is set', {
-      definitions() {
-        debug = true;
-      },
-      tests() {
-        it('returns passed value', () => {
-          const github = subject();
-          expect(github.debug).toEqual(debug);
-        });
-      },
     });
 
     context('when apiUrl is set', {
