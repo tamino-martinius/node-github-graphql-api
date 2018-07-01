@@ -3,17 +3,20 @@ import {
   Options,
 } from './types';
 import { request } from 'https';
-import { URL } from 'url';
+import {
+  parse as parseUrl,
+  UrlWithStringQuery,
+} from 'url';
 
 export class GitHub {
   token: string;
   apiUrl: string = 'https://api.github.com/graphql';
-  url: URL;
+  url: UrlWithStringQuery;
 
   constructor(config: Options) {
     this.token = config.token;
     if (config.apiUrl) this.apiUrl = config.apiUrl;
-    this.url = new URL(this.apiUrl);
+    this.url = parseUrl(this.apiUrl);
   }
 
   public async query(query: string, variables?: Dict<any>): Promise<any> {
