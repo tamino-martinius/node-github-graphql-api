@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2015",
     "module": "CommonJS",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -16,10 +16,12 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "lib": [
+      "es2015.promise"
+    ]
   },
   "files": [
-    "node_modules/typescript/lib/lib.es2015.d.ts",
     "src/index.ts"
   ],
   "include": [
