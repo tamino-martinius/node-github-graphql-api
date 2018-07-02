@@ -30,10 +30,10 @@
     "node": ">=6.14.0"
   },
   "scripts": {
-    "coverage": "rm -rf coverage* && jest --coverage",
+    "coverage": "npm run compile && rm -rf coverage* && jest --coverage",
     "test": "jest",
     "watch": "tsc -w",
-    "ci": "npm run coverage && codecov",
+    "ci": "npm run compile && npm run coverage && codecov",
     "compile": "rm -rf dist/* && tsc",
     "preversion": "npm run compile && git add ."
   },
