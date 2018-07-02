@@ -16,10 +16,7 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "es2015.promise"
-    ]
+    "experimentalDecorators": true
   },
   "files": [
     "node_modules/typescript/lib/lib.es2015.d.ts",
