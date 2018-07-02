@@ -4,6 +4,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./github"));
-var github_1 = require("./github");
+const github_1 = require("./github");
 exports.default = github_1.GitHub;
 //# sourceMappingURL=index.js.map
