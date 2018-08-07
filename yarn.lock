@@ -3311,6 +3311,10 @@ ts-jest@^22.4.6:
     source-map-support "^0.5.5"
     yargs "^11.0.0"
 
+ts-mjs@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ts-mjs/-/ts-mjs-3.1.0.tgz#01005a10961a8960557dacb78f8211462e368547"
+
 tslib@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
