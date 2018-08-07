@@ -44,6 +44,7 @@
     "jest": "^23.2.0",
     "ts-dedent": "^1.0.0",
     "ts-jest": "^22.4.6",
+    "ts-mjs": "^3.1.0",
     "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",
     "typescript": "^2.9.2"
